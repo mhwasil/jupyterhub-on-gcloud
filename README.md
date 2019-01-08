@@ -108,9 +108,9 @@ nbgrader feedback assignment_id
 sudo config/release_feedback.py --assignment_id WuS-01
 ```
 * Arguments:
-  ** --assignment_id : specify the assignment id
-  ** --student_id : create feedback for a specific student
-  ** --student_group : create feedback for the students in a group (Linux group)
+  * --assignment_id : specify the assignment id
+  * --student_id : create feedback for a specific student
+  * --student_group : create feedback for the students in a group (Linux group)
 * If there is no student id specified, then it will generate feedback for all students
 
 Generating pdfs from the feedback
