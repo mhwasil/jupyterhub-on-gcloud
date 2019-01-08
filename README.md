@@ -1,6 +1,10 @@
 jupyterhub-on-gcloud <br>
 no kubernetes
 
+This project is part of [DigiKlausur project](https://github.com/DigiKlausur/jupyterhub-on-gcloud) project to deploy jupyterhub on a server (Google cloud engine) for teaching.
+However, due to unreliabily of a single server running jupyterhub, we are switching to Kubernetes.
+This deployment is useful for small class consisting of maximum 50-60 students.
+
 Installation
 ============
 Created Freitag 21 September 2018
@@ -92,4 +96,23 @@ Created Freitag 21 September 2018
 	* Instructor only (local)
 		* jupyter nbextension enable --user --py nbgrader
 
+
+Releasing feedback to student assignment directory
+=============
+* Before releasing feedback, the html files containing the feedback have to be generated with [nb grader](https://nbgrader.readthedocs.io/en/0.2.x/user_guide/06_returning_feedback.html).
+```
+nbgrader feedback assignment_id
+```
+* Now, we can send back the feedbacks to student directory
+```
+sudo config/release_feedback.py --assignment_id WuS-01
+```
+* Arguments:
+  ** --assignment_id : specify the assignment id
+  ** --student_id : create feedback for a specific student
+  ** --student_group : create feedback for the students in a group (Linux group)
+* If there is no student id specified, then it will generate feedback for all students
+
+Generating pdfs from the feedback
+=============
 
